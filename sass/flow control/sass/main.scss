@@ -1,0 +1,121 @@
+//* Flow Control
+//* di sass kita bisa membuat @if @ifelse @for @forreach seperti bahasa pemograman lainnya seperti javascript atau php.
+//* Contoh :
+//* if :
+@mixin profile-picture($size, $circle: false) {
+  width: $size;
+  height: $size;
+  border: 5px solid white;
+  box-shadow: 1px 1px 3px rgba($color: #000, $alpha: 0.3);
+
+  @if $circle == true {
+    border-radius: 50%;
+  }
+}
+
+//* else :
+$light-bg: #eaeaea;
+$light-text: #333;
+$dark-bg: #333;
+$dark-text: #ddd;
+
+@mixin color-mode($light-mode: true) {
+  @if $light-mode == true {
+    background-color: $light-bg;
+    color: $light-text;
+  } @else {
+    background-color: $dark-bg;
+    color: $dark-text;
+  }
+}
+
+//* else if :
+@mixin triangle($size, $color, $direction) {
+  width: 0;
+  height: 0;
+  background-color: transparent;
+  border-color: transparent;
+  border-style: solid;
+  border-width: $size / 2;
+
+  @if $direction == up {
+    border-bottom-color: $color;
+  } @else if $direction == right {
+    border-left-color: $color;
+  } @else if $direction == down {
+    border-top-color: $color;
+  } @else {
+    border-right-color: $color;
+  }
+}
+
+$color: blue;
+
+$social-colors: (
+  facebook: #3b5998,
+  youtube: #ff0000,
+  instagram: #ffbf34,
+  twitter: #1da1f2,
+  linkedin: #2609e7,
+);
+
+body {
+  @include color-mode($light-mode: true);
+  min-height: 1000px;
+
+  .circle {
+    .circle-profile {
+      @include profile-picture(80px, $circle: true);
+    }
+  }
+
+  .square {
+    .square-profile {
+      @include profile-picture(200px, $circle: false);
+    }
+  }
+
+  .right {
+    @include triangle(2em, black, right);
+  }
+
+  //* for
+  //   .gradient {
+  //     margin: 0;
+  //     padding: 0;
+  //     list-style: none;
+  //     @for $i from 1 to 11 {
+  //       li:nth-child(#{$i}) {
+  //         padding: 4px;
+  //         background-color: lighten($color, $i * 3%); // bisa juga menggunakan darken
+  //       }
+  //     }
+  //   }
+
+  //* while
+  .gradient {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    $i: 1;
+    @while $i < 11 {
+      li:nth-child(#{$i}) {
+        padding: 4px;
+        background-color: lighten($color, $i * 3%);
+      }
+      $i: $i + 1;
+    }
+  }
+
+  //* each
+  .socials {
+    font-size: 2em;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    @each $social, $color in $social-colors {
+      .#{$social} {
+        color: $color;
+      }
+    }
+  }
+}

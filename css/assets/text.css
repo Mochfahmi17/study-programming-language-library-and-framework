@@ -1,0 +1,24 @@
+/* text align = start, end, center, justify */
+/* h1 {
+  text-align: center;
+} */
+
+/* font-weight (untuk mengatur ketebalan font) = normal, bold, lighter, bolder, 100, 900 */
+/* p {
+  font-weight: 800;
+} */
+
+/* text-decoration (untuk memberikan garis pada font) = underline, underline dotted, underline dotted red, green wavy underline, underline overline #ff3028, none */
+h1 {
+  text-decoration: underline red;
+}
+
+/* line-height (untu mengatur jarak pada baris baru di font) = normal, 2.5, 3em, 150%, 32px*/
+/* p {
+  line-height: 1.5;
+} */
+
+/* letter-spacing (untuk mengatur jarak antar huruf) = normal, .2rem, 1px, -1px */
+p {
+  letter-spacing: 11px;
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue js</title>
+  </head>
+  <body>
+    <div id="app">
+      <!-- v-If v-else-if v-else -->
+      <!-- <div v-if="nilai >= 8"><h2>Nilai anda A</h2></div>
+      <div v-else-if="nilai >= 6"><h2>Nilai anda B</h2></div>
+      <div v-else><h2>Nilai anda C</h2></div> -->
+
+      <!-- v-show -->
+      <div v-show="stateLampu">lampu Hidup</div>
+      <button @click="toggleLampu">Pencet Saklar</button>
+    </div>
+
+    <script type="module">
+      import { createApp } from "https://unpkg.com/vue@3/dist/vue.esm-browser.js";
+
+      createApp({
+        data() {
+          return {
+            // message: "Anda Lulus!",
+            // nilai: 5,
+            stateLampu: true,
+          };
+        },
+        methods: {
+          toggleLampu() {
+            this.stateLampu = !this.stateLampu;
+          },
+        },
+      }).mount("#app");
+    </script>
+  </body>
+</html>

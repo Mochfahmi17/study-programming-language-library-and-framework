@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lifesycle Hook</title>
+  </head>
+  <body>
+    <div id="app">
+      <input type="text" value="Apapun" ref="inputan" />
+      <br />
+      <input type="text" :value="count" ref="hitungan" />
+      <button @click="count++">Add</button>
+    </div>
+
+    <script type="module">
+      import { createApp } from "https://unpkg.com/vue@3/dist/vue.esm-browser.js";
+      //* beforeCreate dan created
+      //! Note : beforeCreate: Hook ini dijalankan sebelum instance Vue diinisialisasi. Kamu bisa menggunakan ini untuk setup hal-hal sebelum Vue instance benar-benar dibuat, misalnya inisialisasi global variables.
+
+      //! Note : created: Hook ini dipanggil setelah instance Vue selesai dibuat, dan data dari data properties telah diinisialisasi. Pada titik ini, data sudah bisa diakses atau dimanipulasi.
+
+      //* beforeMount dan mounted
+      //! Note : beforeMount: Hook ini dipanggil sebelum instance Vue di-mount ke DOM. Pada saat hook ini dipanggil, template sudah dikompilasi, tetapi belum dirender ke DOM. Ini berarti pada tahap ini, elemen DOM yang terkait dengan Vue instance belum terikat.
+      //! Use case umum untuk beforeMount:
+      //! Menjalankan logika sebelum elemen DOM muncul di halaman.
+      //! Menyiapkan atau memodifikasi data yang perlu digunakan saat elemen di-mount ke DOM.
+
+      //! Note : mounted: Hook ini dipanggil setelah instance Vue di-mount ke DOM. Setelah hook ini dijalankan, elemen DOM terkait dengan instance Vue sudah ada dan bisa dimanipulasi. Ini adalah tempat yang baik untuk menjalankan kode yang memerlukan akses langsung ke elemen DOM, seperti menggunakan jQuery, manipulasi canvas, atau library visual lainnya.
+      //! Use case umum untuk mounted:
+      //! Menginisialisasi library yang butuh akses ke DOM (misalnya plugin UI atau charting libraries).
+      //! Memanipulasi atau mengakses DOM secara langsung.
+      //! Melakukan permintaan AJAX setelah DOM tersedia.
+
+      //* beforeUpdate dan updated
+      //! Note : beforeUpdate: Hook ini dipanggil sebelum DOM diperbarui, tetapi setelah data atau state komponen berubah. Pada tahap ini, komponen sudah mengetahui bahwa akan ada perubahan, tetapi perubahan tersebut belum diterapkan ke DOM.
+      //! Use case umum untuk beforeUpdate:
+      //! Gunakan ini untuk mengecek atau menyimpan data sebelum perubahan diterapkan ke DOM, jika diperlukan.
+
+      //! Note : updated : Hook ini dipanggil setelah DOM diperbarui dengan data terbaru. Setelah hook ini, perubahan data yang baru saja terjadi sudah direfleksikan ke dalam DOM.
+      //! Use case umum untuk updated:
+      //! Gunakan ini untuk menjalankan kode yang memerlukan DOM yang sudah diperbarui, seperti untuk keperluan re-rendering atau manipulasi DOM tambahan.
+      createApp({
+        data() {
+          return {
+            message: "Hello World!",
+            count: 0,
+          };
+        },
+        beforeCreate() {
+          // Disini adalah logika sebelum instance vue dibuat
+          console.log(`before create : ${this.message}`); // output: undefined
+        },
+        created() {
+          // Disini adalah logika setelah instance vue selesai diinisialisasi
+
+          //! Note : Jika ingin berinteraksi dengan properti message maka lakukan logika tersebut di lifesycle created() jangan lakukan di berforeCreate() karena properti message tidak akan dikenali.
+          console.log(`created : ${this.message}`); // output : Hello World!
+        },
+        beforeMount() {
+          console.log(`beforeMount : ${this.$refs.inputan}`); // output : undefined. Karena this.$refs.inputan belum kenal.
+          // DOM masih belum tersedia untuk manipulasi
+        },
+        mounted() {
+          console.log(`Mounted : ${this.$refs.inputan.value}`); // output : Apapun.
+          // DOM sekarang sudah bisa diakses dan dimanipilasi
+        },
+        beforeUpdate() {
+          console.log(`beforeUpdate : ${this.$refs.hitungan.value}`); // output : Akan menampilkan data sebelumnya
+        },
+        updated() {
+          console.log(`updated : ${this.$refs.hitungan.value}`); // output : akan menampilkan data terbarunya
+        },
+      }).mount("#app");
+      //! Dalam konteks ini, ini mirip seperti OOP dalam PHP
+    </script>
+  </body>
+</html>

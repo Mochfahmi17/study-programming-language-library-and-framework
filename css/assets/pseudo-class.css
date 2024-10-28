@@ -1,0 +1,30 @@
+/* pseudo class adalah kata kunci yang ditambahkan pada selector untuk memilih element secara spesifik pada kondisi tertentu */
+/* contoh : */
+/* :sctive */
+/* :checked */
+/* :first */
+/* :hover */
+/* :nth-child() */
+/* :nth-of-type() */
+/* dll. */
+
+.jokes > p {
+  font-size: 14px;
+  color: aqua;
+}
+
+/* ini adalah cara penggunaan :hover */
+.jokes > p:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* ini adalah cara penggunaan :nth-last-of-type() */
+/* section:nth-last-of-type(2) {
+  background-color: grey;
+} */
+
+/* ini adalah cara penggunaan :nth-of-type() */
+section:nth-of-type(3n) {
+  background-color: salmon;
+}

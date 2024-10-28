@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>v-bind</title>
+    <style>
+      .textbiru {
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <!-- <a v-bind:href="url" target="_blank">Google</a> -->
+      <!-- Kita tidak bisa menuliskan {{ url }} di dalam attribut maka dari itu kita memerlukan v-bind untuk shorthand nya hanya menuliskan titik dua (:) -->
+      <h2>User</h2>
+      <div :class="selectedClass">name : {{ user.name }}</div>
+      <div><img :src="user.image" :alt="'image of ' + user.name" :style="{width: responsiveWidth}" :title="'Image of ' + user.name" /></div>
+      <!-- Jika ada yang bukan properti maka gunakan kurung kurawal 1 seperti contoh style di atas -->
+    </div>
+    <script type="module">
+      import { createApp } from "https://unpkg.com/vue@3/dist/vue.esm-browser.js";
+
+      createApp({
+        data() {
+          return {
+            // url: "https://www.google.com",
+            user: {
+              name: "Ilham",
+              image: "https://images.unsplash.com/photo-1445053023192-8d45cb66099d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            },
+            responsiveWidth: "200px",
+            selectedClass: "textbiru",
+          };
+        },
+      }).mount("#app");
+    </script>
+  </body>
+</html>

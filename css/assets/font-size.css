@@ -1,0 +1,7 @@
+/* font-size pada css adalah digunakan untuk mengatur size pada font */
+/* value yang bisa diberikan pada properti font-size adalah :  */
+/* Relative (untuk website yang responsif atau mengikuti ukuran layar) : 1. em, 2. rem, 3. vh, 4. vw, 5. %, 6.etc */
+/* absolute (untuk ukuran yang fixed atau tidak mempedulikan element parent nya) : 1. px, 2. pt, 3. cm, 4. in, 5. mm */
+p {
+  font-size: 10px;
+}

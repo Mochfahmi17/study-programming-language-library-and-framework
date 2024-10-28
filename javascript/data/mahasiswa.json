@@ -1,0 +1,23 @@
+[
+  {
+    "nama": "Mochammad Fahmi Kurnia Sandi",
+    "nrp": "34562213",
+    "email": "mochammadfahmiks@gmail.com",
+    "jurusan": "Rekayasa Perangkat Lunak",
+    "idSiswa": 1
+  },
+  {
+    "nama": "Ilham Kurniawan",
+    "nrp": "88760041",
+    "email": "ilhamkurniawan@gmail.com",
+    "jurusan": "Desain Grafis",
+    "idSiswa": 2
+  },
+  {
+    "nama": "Putri Silviana",
+    "nrp": "87326654",
+    "email": "putrisilviana@gmail.com",
+    "jurusan": "Perhotelan",
+    "idSiswa": 3
+  }
+]

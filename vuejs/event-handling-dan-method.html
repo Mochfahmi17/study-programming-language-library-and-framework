@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Handling Vue</title>
+  </head>
+  <body>
+    <div id="app">
+      <button v-on:click="mengurangi()">-</button>
+      <span>{{ count }}</span>
+      <button @click="menambah()">+</button>
+      <br />
+      <!-- Secara fungsi ini sama namun hanya beda penulisan saja, @click ini hanya shorthand dari v-on -->
+      <button @click="sayHello('Ilham')">Say Hello</button>
+      <br />
+      <input type="text" @keyup.space="sayHello('Joseph')" />
+      <br />
+      <form action="anjay.html" method="post" @submit.prevent>
+        <input type="text" />
+        <button type="submit">Send</button>
+      </form>
+    </div>
+
+    <script type="module">
+      import { createApp } from "https://unpkg.com/vue@3/dist/vue.esm-browser.js";
+
+      createApp({
+        data() {
+          return {
+            count: 0,
+          };
+        },
+        methods: {
+          mengurangi() {
+            this.count--;
+          },
+          menambah() {
+            this.count++;
+          },
+          sayHello(nama) {
+            alert(`Halo ${nama}`);
+          },
+        },
+      }).mount("#app");
+    </script>
+  </body>
+</html>

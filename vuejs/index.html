@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <div>{{ count }}</div>
+      <div>{{ message }}</div>
+      <div v-text="message"></div>
+      <!-- Menggunakan v-text untuk menampilkan data ke browser dalam bentuk teks, namun jika ada tag html di data tersebut maka akan tetap dianggap teks walaupun ada tag html di dalamnya -->
+
+      <div v-text="message2">Halo nama kamu siapa ?</div>
+      <!-- Halo nama kamu siapa ? akan ditimpa dan menjadi Ilham Maulana -->
+
+      <div class="" v-html="message3"><p>uwu</p></div>
+      <!-- Gunakan v-html jika ingin menampilkan isi teks beserta tag html nya, dan juga v-html ini sama seperti v-teks yang mereplace jika ada teks atau tag html didalamnya seperti contoh diatas -->
+    </div>
+    <script type="module">
+      import { createApp } from "https://unpkg.com/vue@3/dist/vue.esm-browser.js";
+
+      createApp({
+        data() {
+          return {
+            count: 0,
+            message: "Hello World!",
+            message2: "Ilham Maulana",
+            message3: "<h1>Surabaya</h1>",
+          };
+        },
+        methods: {
+          tambah() {
+            this.count++;
+          },
+          kurang() {
+            this.count--;
+          },
+        },
+      }).mount("#app");
+    </script>
+  </body>
+</html>

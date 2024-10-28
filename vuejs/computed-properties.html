@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Computed Properties</title>
+  </head>
+  <body>
+    <div id="app">
+      <form action="">
+        <input type="text" placeholder="First Name" v-model="firstName" /><br />
+        <input type="text" placeholder="Last Name" v-model="lastName" /><br />
+      </form>
+
+      <div>fullName : {{ fullName }}</div>
+    </div>
+    <script type="module">
+      import { createApp } from "https://unpkg.com/vue@3/dist/vue.esm-browser.js";
+
+      createApp({
+        data() {
+          return {
+            firstName: "",
+            middleName: "",
+            lastName: "",
+          };
+        },
+        computed: {
+          fullName() {
+            return this.firstName + " " + this.lastName;
+          },
+        },
+      }).mount("#app");
+    </script>
+  </body>
+</html>

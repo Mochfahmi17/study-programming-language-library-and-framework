@@ -1,0 +1,56 @@
+//* Variable
+//* CSS juga memiliki sebuah variabel, berikut contohnya:
+//* CSS Variable :
+// :root {
+//   --primary-color: #f4f1de;
+//   --secondary-color: #f2cc8f;
+//   --text-color: #e07a5f;
+// }
+
+// body {
+//   background-color: var(--primary-color);
+// }
+// h1 {
+//   color: var(--text-color);
+// }
+// p {
+//   color: var(--text-color);
+// }
+
+//* SASS Variable :
+//! Note : jika ada minus atau underscore yag digunakan untuk pemisah kata, di saas akan dianggap variabel yang sama.
+
+//! Note : jika variable di sass ditulis diluar tanpa pembungkus seperti contoh dibawah ini, maka ini disebut variable global yang bisa di akses oleh elemen manapun.
+
+//! Note : di sass kita juga bisa membuat variable local yaitu variable yang hanya bisa dipakai didalam elemen tertentu saja. lihat contoh di variable $primary-color, ia berada di dalam body{}, maka daritu varable $promary-color akan hanya bisa diakses oleh oleh body{} beserta elemen turunanya (misal jika didalam body ada elemen h1, p, .main, dll).
+
+//! Note : Kita juga bisa merubah variable yang tadinya adalah variable lokal menjadi variable global dengan cara menggunakan !global di penulisan akhir varibale
+
+// $primary-color: green;
+// $secondary-color: #f2cc8f;
+// $text-color: #e07a5f;
+
+// body {
+//   $primary-color: #f4f1de;
+//   background-color: $primary_color;
+//   h1 {
+//     color: $primary-color;
+//   }
+// }
+
+// p {
+//   color: $primary-color;
+// }
+
+//* Map
+// * Map adalah tipe data yang memungkinkan penyimpanan sepasang key-value, mirip seperti associative array atau object di JavaScript. Dengan menggunakan map, kita dapat menyimpan data yang berhubungan dalam satu struktur, sehingga lebih mudah diakses dan diorganisir.
+//* Contoh :
+$alert: (
+  "danger": red,
+  "success": green,
+  "warning": orange,
+);
+
+h1 {
+  color: map-get($alert, "success");
+}

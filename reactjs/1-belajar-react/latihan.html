@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Latihan react</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <style>
+      #root {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      const container = document.getElementById("root");
+      const root = ReactDOM.createRoot(container);
+      const text = "Done!";
+
+      function HomePage() {
+        const [number, setNumbers] = React.useState(0);
+
+        function handleClickPlus() {
+          setNumbers(number + 1);
+        }
+
+        function handleClickMinus() {
+          setNumbers(number - 1);
+        }
+
+        return (
+          <>
+            <button onClick={handleClickMinus}>-</button>
+            <span>{number}</span>
+            <button onClick={handleClickPlus}>+</button>
+          </>
+        );
+      }
+      root.render(<HomePage />);
+    </script>
+  </body>
+</html>

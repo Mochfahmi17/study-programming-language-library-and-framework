@@ -1,0 +1,59 @@
+// .main {
+//   background-color: lightblue;
+
+//   .main-heading {
+//     font-size: 2em;
+//   }
+
+//   .main-paragraph {
+//     font-size: 1.4em;
+//   }
+// }
+
+//* Jika menggunakan css biasa akan menuliskan banyak kode seperti contoh dibawah ini :
+// .main h1, .main p, footer h1, footer p {}
+
+//* Dengan menggunakan sass atau scss akan memudahkan kita dan penulisan tersebut tidak terlalu panjang. Contoh :
+// .main,
+// footer {
+//   h1,
+//   p {
+//     letter-spacing: 1px;
+//   }
+// }
+
+//* Karakter yang ada di sass yaitu karakter &
+//* & di sass ini disebut parent selector, ini digunakan untuk menarget elemen parent pada saat kita melakukan nesting.
+//* Contoh :
+// .main {
+//   .container & {
+//     background-color: lightblue;
+//   }
+//   .main-heading {
+//     font-size: 2em;
+//   }
+
+//   &:hover {
+//     background-color: red;
+//   }
+// }
+
+//* Contoh 2 :
+//* Dengan interpolasi dengan menggunakan #{&}
+.main {
+  #{&}-heading {
+    font-size: 2em;
+  }
+  #{&}-paragraph {
+    font-size: 1.4em;
+  }
+}
+
+.footer {
+  & &-heading {
+    font-size: 2em;
+  }
+  & &-paragraph {
+    font-size: 1.4em;
+  }
+}

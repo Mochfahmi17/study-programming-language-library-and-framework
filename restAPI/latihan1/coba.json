@@ -1,0 +1,13 @@
+[
+  {
+    "nama": "mochammad fahmi",
+    "umur": 24,
+    "nrp": "09356377",
+    "lulus": true,
+    "hobby": ["coding", "gaming"],
+    "pembimbing": {
+      "pembimbing1": "Erick",
+      "pembimbing2": "Raisa"
+    }
+  }
+]

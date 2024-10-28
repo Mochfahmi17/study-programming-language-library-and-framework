@@ -1,0 +1,67 @@
+//* Mixin
+//* Mixin adalah blok kode yang dapat digunakan kembali di berbagai tempat dalam stylesheet. Dengan mixin, kita bisa mendefinisikan sekumpulan aturan CSS sekali saja, lalu menggunakannya di banyak tempat, sehingga menghindari duplikasi kode dan mempermudah pemeliharaan.
+//* Untuk mendefinisikan mixin, kita menggunakan direktif @mixin, dan untuk menggunakan mixin nya kita menggunakan @include.
+
+//* Contoh simple mixin:
+@mixin inline-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    display: inline-block;
+  }
+}
+
+@mixin flex-box($direction: row, $space: center) {
+  display: flex;
+  justify-content: $space;
+  align-items: center;
+  flex-direction: $direction;
+}
+
+.header ul {
+  @include inline-list();
+  li {
+    background-color: #000;
+    padding: 0.7em;
+    a {
+      color: white;
+    }
+  }
+}
+
+.footer ul {
+  @include inline-list();
+  li {
+    padding: 0.4em;
+    background-color: salmon;
+
+    a {
+      color: white;
+      text-decoration: none;
+    }
+  }
+}
+
+//* Arguments/parameters pada fixin
+//* defaultnya mixin mengharapkan ada argumen yang harus dikirmkan. jika tidak ingin memberikan nilai dari mixin tersebut maka berikan nilai default kedalam mixinnya seperti contoh berikut :
+//* @mixin($nilai-default: row) {
+//* display: flex;
+//* flex-direction: $nilai-default;
+//* }
+
+.container {
+  @include flex-box(row-reverse, space-evenly);
+  width: 600px;
+  height: 400px;
+  background-color: #eaeaea;
+
+  .box {
+    width: 60px;
+    height: 60px;
+    background-color: #bada55;
+    text-align: center;
+    line-height: 60px;
+  }
+}

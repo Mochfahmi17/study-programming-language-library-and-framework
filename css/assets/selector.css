@@ -1,0 +1,48 @@
+/* ini adalah contoh penggunaan universal selector */
+/* * {
+  background-color: violet;
+} */
+
+/* ini adalah cara penggunaan element selector */
+/* h1,
+h2 {
+  color: yellow;
+  background-color: black;
+  font-size: smaller;
+}
+
+span {
+  color: white;
+} */
+
+/* ini adalah cara penggunaan id selector */
+/* #list2 {
+  color: red;
+} */
+
+/* ini adalah cara penggunaan class selector */
+/* .mark {
+  background-color: aquamarine;
+} */
+
+/* ini adalah cara penggunaan descendant selector */
+/* .jokes p {
+  font-size: 16px;
+  color: aqua;
+} */
+
+/* ini adalah cara penggunaan direct descendant selector */
+.jokes > p {
+  font-size: 18px;
+  color: blue;
+}
+
+/* ini adalah cara penggunaan ajdacent selector */
+a + button {
+  background-color: green;
+}
+
+/* ini adalah cara penggunaan attribute selector */
+input[type="text"] {
+  color: red;
+}

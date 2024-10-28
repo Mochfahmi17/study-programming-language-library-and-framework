@@ -1,0 +1,19 @@
+/* css color system adalah sistem color yang bisa digunakan menggunakan : 1. name color, 2. rgb color, 3. hex color */
+
+/* conoh penggunaan color name : */
+h1 {
+  color: red;
+  background-color: blue;
+}
+
+/* contoh penggunaan rgb color : */
+button {
+  color: blueviolet;
+  background-color: rgb(210, 180, 140);
+}
+
+/* contoh penggunaan hex color : */
+p {
+  color: white;
+  background-color: #808080;
+}

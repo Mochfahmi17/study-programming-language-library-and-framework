@@ -1,0 +1,28 @@
+/* pseudo element adalah kata kunci yang ditambahkan pada selector untuk memilih bagian element yang dipilih */
+/* contoh : */
+/* :after */
+/* :before */
+/* :first-letter */
+/* :first-line */
+/* :selection */
+/* dll. */
+
+/* ini adalah cara penggunaan ::first-letter */
+section h3::first-letter {
+  font-size: xx-large;
+}
+
+/* ini adalah cara penggunaan ::first-line */
+section p::first-line {
+  color: red;
+}
+
+/* ini adalah cara penggunaan ::after */
+section h3::after {
+  content: "*";
+}
+
+/* ini adalah cara penggunaan ::before */
+section h3::before {
+  content: "*";
+}

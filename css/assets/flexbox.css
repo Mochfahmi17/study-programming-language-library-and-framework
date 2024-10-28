@@ -1,0 +1,67 @@
+h1 {
+  text-align: center;
+}
+
+.kotak {
+  background-color: #003049;
+  width: 90%;
+  /* height: 500px; */
+  margin: 0 auto;
+  border: 5px solid #003049;
+  display: flex;
+  /* flex-wrap: wrap; */
+  flex-direction: row;
+  justify-content: center;
+  align-items: start;
+  align-content: space-around;
+}
+
+/* note :1. justify-content untuk perataan horizontal */
+/* 2. align-items untuk perataan vertikal */
+.kotak div {
+  width: 200px;
+  height: 200px;
+  font-size: 50px;
+  flex-basis: 300px;
+}
+
+.kotak .kotak1 {
+  background-color: #00b4d8;
+  flex-shrink: 2;
+}
+
+.kotak2 {
+  background-color: #0096c7;
+}
+
+.kotak3 {
+  background-color: #0077b6;
+}
+
+.kotak4 {
+  background-color: #023e86;
+}
+
+.kotak5 {
+  background-color: #03045e;
+}
+
+/* layout example */
+main {
+  width: 80%;
+  margin: 0 auto;
+  border: 5px solid black;
+  height: 500px;
+  display: flex;
+}
+
+main .sidebar {
+  background-color: aqua;
+  flex: 1 2 300px;
+  /* flex : 1(untuk flex-grow) 2(untuk flex-shrink) 300px(untuk flex-basis) */
+}
+
+main .content {
+  background-color: salmon;
+  flex: 2 1 800px;
+}

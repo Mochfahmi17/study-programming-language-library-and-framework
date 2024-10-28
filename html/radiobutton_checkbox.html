@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>radio button & checkbox</title>
+  </head>
+  <body>
+    <h1>Belajar radiobutton, checkbox, select & textarea</h1>
+    <h3>Menu makanan</h3>
+    <form action="/pesanan" method="get">
+      <input type="radio" id="nasigoreng" name="makanan" value="Nasi Goreng" checked />
+      <label for="nasigoreng">Nasi Goreng</label>
+      <input type="radio" id="ayamgoreng" name="makanan" value="Ayam Goreng" />
+      <label for="ayamgoreng">Ayam Goreng</label>
+      <br />
+      <label for="porsi">porsi</label>
+      <select name="porsi" id="porsi">
+        <option value="">-- Chose your porsion --</option>
+        <option value="small">Small</option>
+        <option value="medium" selected>Medium</option>
+        <option value="large">Large</option>
+      </select>
+      <br />
+      <h3>lauk</h3>
+      <br />
+      <input type="checkbox" name="sosis" id="sosis" value="Sosis" checked />
+      <label for="sosis">Sosis</label>
+      <input type="checkbox" name="udang" id="udang" value="Udang" />
+      <label for="udang">Udang</label>
+      <br />
+      <p>
+        <label for="notes">Catatan :</label>
+      </p>
+      <textarea name="notes" id="notes" cols="50" rows="5"></textarea>
+      <button type="submit">Order now!</button>
+    </form>
+  </body>
+</html>

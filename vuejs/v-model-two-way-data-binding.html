@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>v-model</title>
+  </head>
+  <body>
+    <div id="app">
+      <div>
+        <label for="">Username : </label><br />
+        <input type="text" placeholder="Username" v-model="username" />
+      </div>
+      <div>
+        <label for="">Address : </label><br />
+        <textarea name="" id="" v-model="address"></textarea>
+      </div>
+      <div>
+        <label for="">Gender : </label><br />
+        <input type="radio" value="Pria" v-model="gender" />Pria <input type="radio" value="Wanita" v-model="gender" />Wanita
+      </div>
+      <div>
+        <label for="">Hobi : </label><br />
+        <label for=""> Menulis</label>
+        <input type="checkbox" value="Menulis" v-model="hobi" /><br />
+        <label for="">Berenang</label>
+        <input type="checkbox" value="Berenang" v-model="hobi" /><br />
+        <label for="">Memasak</label>
+        <input type="checkbox" value="Memasak" v-model="hobi" /><br />
+      </div>
+
+      <div>
+        <label for="">Role :</label><br />
+        <select name="Role" id="role" v-model="role">
+          <option disabled value="">-- Pilih Role --</option>
+          <option value="User">User</option>
+          <option value="Admin">Admin</option>
+        </select>
+      </div>
+
+      <div class="tampil">
+        <h1>Username : {{ username }}</h1>
+        <h2>Alamat : {{ address }}</h2>
+        <h2>Jenis Kelamin : {{ gender }}</h2>
+        <h2>
+          Hobi :
+          <span v-if="hobi.length > 0">
+            <ul v-for="item in hobi">
+              <li>{{ item }}</li>
+            </ul>
+          </span>
+        </h2>
+        <h2>Role : {{ role }}</h2>
+      </div>
+    </div>
+    <script type="module">
+      import { createApp } from "https://unpkg.com/vue@3/dist/vue.esm-browser.js";
+
+      createApp({
+        data() {
+          return {
+            username: "",
+            address: "",
+            gender: "",
+            hobi: [],
+            role: "",
+          };
+        },
+      }).mount("#app");
+    </script>
+  </body>
+</html>

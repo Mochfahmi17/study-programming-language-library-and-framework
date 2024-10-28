@@ -1,0 +1,82 @@
+//* Built-in Modules
+//* Built-in modules adalah modul bawaan yang disediakan oleh Sass untuk membantu dalam pembuatan dan pengelolaan stylesheet. Modul ini mencakup berbagai fungsi dan fitur yang memungkinkan kamu untuk melakukan tugas-tugas seperti manipulasi warna, manipulasi string, pengelolaan daftar, peta, dan matematika.
+
+//* Berikut adalah beberapa built-in modules di Sass yang penting dan sering digunakan:
+//* color.
+//* Modul ini menyediakan berbagai fungsi untuk memanipulasi warna. Kamu bisa melakukan perubahan pada warna seperti menambah atau mengurangi kecerahan, menyesuaikan saturasi, atau mengubah model warna (RGB ke HSL, dll).
+//* dalam color kita bisa memberikan sebuah function bawaan, seperti:
+//* adjust
+//* complement
+//* darken
+//* lighten
+//* saturate
+//* desaturate
+//* grayscale
+//* mix
+//* fade-in
+//* fade-out
+
+//* list.
+//* Modul ini menyediakan berbagai fungsi untuk bekerja dengan daftar di Sass. Kamu bisa menambahkan item, menghapus item, mengambil item, mencari, dan sebagainya.
+
+//* map.
+//* Modul ini memungkinkan kamu untuk bekerja dengan map (peta) di Sass. Modul ini menyediakan fungsi untuk mengelola map seperti menambah pasangan kunci-nilai, memeriksa apakah kunci tertentu ada, menggabungkan map, dan lain-lain.
+
+//* math.
+//* Modul ini menyediakan berbagai fungsi matematika untuk melakukan operasi aritmatika, seperti pembulatan, pengambilan nilai mutlak, eksponensial, akar kuadrat, konversi derajat ke radian, dan lainnya.
+
+//* meta.
+//* Modul ini memungkinkan akses ke fungsi meta Sass seperti mengambil tipe data (type-of()), menguji keberadaan (global-variable-exists()), dan lainnya.
+
+//* selector.
+//* Modul ini menyediakan fungsi untuk bekerja dengan selector CSS. Kamu bisa menggabungkan selector, memeriksa apakah selector mengandung selector tertentu, dan lainnya.
+
+//* string.
+//* Modul ini menyediakan fungsi untuk memanipulasi string. Kamu bisa menggabungkan string, mencari substring, mengganti substring, dan lainnya.
+
+//? Ringkasan Built-in Modules di Sass:
+//* sass:color: Manipulasi warna.
+//* sass:list: Pengelolaan daftar (list).
+//* sass:map: Pengelolaan peta (map).
+//* sass:math: Fungsi matematika.
+//* sass:meta: Fungsi meta Sass.
+//* sass:selector: Manipulasi selector CSS.
+//* sass:string: Manipulasi string.
+
+//* contoh Built-in function/modules: Color
+//* adjust
+$warna-dasar: salmon;
+h1 {
+  //* Contoh penggunaan adjust-color:
+  //   color: adjust-color($color: $warna-dasar, $green: 100, $blue: 100, $red: -50);
+
+  //* Contoh penggunaan adjust-hue:
+  // color: adjust-hue($color: $warna-dasar, $degrees: 30deg);
+
+  //* Contoh penggunaan complementer:
+  //   color: complement($color: $warna-dasar);
+
+  //* Contoh penggunaan darken:
+  //   color: darken($warna-dasar, 20%);
+
+  //* Contoh penggunaan lighten:
+  //   color: lighten($warna-dasar, 10%);
+
+  //* Contoh penggunaan saturate:
+  //   color: saturate($warna-dasar, 10%);
+
+  //* Contoh penggunaan desaturate:
+  //   color: desaturate($warna-dasar, 50%);
+
+  //* Contoh penggunaan grayscale:
+  //   color: grayscale($warna-dasar);
+
+  //* Contoh penggunaan mix:
+  //   color: mix($warna-dasar, blue, 50%, 80%);
+
+  //* Contoh penggunaan fade-in:
+  //   color: fade-in(rgba(250, 128, 114, 0.2), 0.5);
+
+  //* Contoh penggunaan fade-out:
+  color: fade-out($warna-dasar, 0.4);
+}
