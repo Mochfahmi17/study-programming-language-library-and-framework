@@ -1,12 +1,14 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useLogin } from "../../hooks/useLogin";
 import Button from "../Elements/Button/Button";
 import { useSelector } from "react-redux";
+import { DarkMode } from "../../context/DarkMode";
 
 const Navbar = () => {
   const username = useLogin();
   const [totalCart, setTotalCart] = useState(0);
   const cart = useSelector((state) => state.cart.data);
+  const { isDarkMode, setIsDarkMode } = useContext(DarkMode);
 
   const handleLogout = () => {
     if (confirm("Yakin ingin logout ?")) {
@@ -28,9 +30,15 @@ const Navbar = () => {
       <Button onClick={handleLogout} color="ml-5 bg-black">
         Logout
       </Button>
-      <div className="ml-5 flex items-center rounded-md bg-gray-800 p-2">
+      <div className="mx-5 flex items-center rounded-md bg-gray-800 p-2">
         {totalCart}
       </div>
+      <Button
+        onClick={() => setIsDarkMode(!isDarkMode)}
+        className="mx-5 rounded bg-black px-10 text-white"
+      >
+        {isDarkMode ? "Light" : "Dark"}
+      </Button>
     </div>
   );
 };

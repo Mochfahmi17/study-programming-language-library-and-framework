@@ -1,9 +1,11 @@
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { useSelector } from "react-redux";
+import { DarkMode } from "../../context/DarkMode";
 
 const TableCard = ({ products }) => {
   const cart = useSelector((state) => state.cart.data);
   const [totalPrice, setTotalPrice] = useState(0);
+  const { isDarkMode } = useContext(DarkMode);
 
   const changeMoney = (money) => {
     const cash = new Intl.NumberFormat("en-US", {
@@ -36,8 +38,10 @@ const TableCard = ({ products }) => {
   }, [cart]);
 
   return (
-    <table className="w-full table-auto overflow-x-scroll text-left">
-      <thead className="bg-gray-100">
+    <table
+      className={`w-full table-auto overflow-x-scroll text-left ${isDarkMode && "text-white"}`}
+    >
+      <thead className={`bg-gray-100 ${isDarkMode && "bg-slate-800"}`}>
         <tr>
           <th className="px-4 py-2">Product</th>
           <th className="px-4 py-2">Price</th>

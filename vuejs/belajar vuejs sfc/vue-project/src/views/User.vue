@@ -3,7 +3,7 @@
 
   <h2>List User</h2>
   <ul>
-    <li v-for="user in users">
+    <li v-for="(user, i) in users" :key="i">
       <RouterLink :to="'/user/' + user.params">{{ user.name }}</RouterLink>
     </li>
   </ul>
