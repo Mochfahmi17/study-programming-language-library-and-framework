@@ -13,8 +13,11 @@
         <% } else { %>
         <p>email : <%= contact.email %></p>
         <% } %>
-        <a href="/contact" class="card-link btn btn-danger">&larr; Back</a>
-        <a href="#" class="card-link btn btn-success">Call</a>
+        <div class="d-flex align-items-center gap-2">
+          <a href="/contact/edit/<%= contact.nama %>" class="btn btn-info badge">Edit</a>
+          <a href="/contact/delete/<%= contact.nama %>" class="btn btn-danger badge" onclick="return confirm('Yakin ingin hapus ?')">Hapus</a>
+        </div>
+        <a href="/contact" class="d-block mt-3">&larr; Back</a>
       </div>
     </div>
     <% } %>
