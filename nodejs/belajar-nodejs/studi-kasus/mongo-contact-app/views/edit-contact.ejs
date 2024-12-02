@@ -10,19 +10,20 @@
       </ul>
     </div>
     <% } %>
-    <form action="/contact/update" method="post">
-      <input type="hidden" name="oldNama" value="<%= contact.oldNama || contact.nama %>" />
+    <form action="/contact?_method=PUT" method="post">
+      <input type="hidden" name="_id" value="<%= findContact._id %>" />
+      <input type="hidden" name="oldNama" value="<%= findContact.oldNama || findContact.nama %>" />
       <div class="mb-3">
         <label for="nama" class="form-label">Nama</label>
-        <input type="text" class="form-control" id="nama" name="nama" placeholder="Masukkan nama" value="<%= contact.nama %>" required />
+        <input type="text" class="form-control" id="nama" name="nama" placeholder="Masukkan nama" value="<%= findContact.nama %>" required />
       </div>
       <div class="mb-3">
         <label for="nohp" class="form-label">No Handphone</label>
-        <input type="text" class="form-control" id="nohp" name="nohp" placeholder="Masukkan no handphone" value="<%= contact.nohp %>" required />
+        <input type="text" class="form-control" id="nohp" name="nohp" placeholder="Masukkan no handphone" value="<%= findContact.nohp %>" required />
       </div>
       <div class="mb-3">
         <label for="email" class="form-label">Email</label>
-        <input type="email" class="form-control" id="email" name="email" placeholder="Masukkan email" value="<%= contact.email %>" />
+        <input type="email" class="form-control" id="email" name="email" placeholder="Masukkan email" value="<%= findContact.email %>" />
       </div>
       <button type="submit" class="btn btn-primary">Edit Data Contact</button>
     </form>

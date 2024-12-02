@@ -13,9 +13,13 @@
         <% } else { %>
         <p>email : <%= contactNama.email %></p>
         <% } %>
-        <div class="d-flex align-items-center gap-2">
+        <div class="d-flex align-items-center gap-1">
           <a href="/contact/edit/<%= contactNama.nama %>" class="btn btn-info badge">Edit</a>
-          <a href="/contact/delete/<%= contactNama.nama %>" class="btn btn-danger badge" onclick="return confirm('Yakin ingin hapus ?')">Hapus</a>
+          <form action="/contact?_method=DELETE" method="post">
+            <input type="hidden" name="nama" value="<%= contactNama.nama %>" />
+            <button type="submit" class="btn btn-danger badge" onclick="return confirm('Yakin ingin hapus data ?')">Hapus</button>
+          </form>
+          <!-- <a href="/contact/delete/<%= contactNama.nama %>" class="btn btn-danger badge" onclick="return confirm('Yakin ingin hapus ?')">Hapus</a> -->
         </div>
         <a href="/contact" class="d-block mt-3">&larr; Back</a>
       </div>
