@@ -1,0 +1,28 @@
+{
+  "menu": [
+    {
+      "makanan": [
+        {
+          "namaMakanan": "Soto Ayam",
+          "harga": "Rp. 10.000"
+        },
+        {
+          "namaMakanan": "Nasi Goreng",
+          "harga": "Rp. 20.000"
+        }
+      ]
+    },
+    {
+      "minuman": [
+        {
+          "namaMinuman": "es Teh",
+          "harga": "Rp.3.000"
+        },
+        {
+          "namaMinuman": "Jus Jeruk",
+          "harga": "Rp. 12.000"
+        }
+      ]
+    }
+  ]
+}

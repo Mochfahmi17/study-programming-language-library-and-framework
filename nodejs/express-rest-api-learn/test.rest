@@ -1,0 +1,22 @@
+GET http://localhost:3000/menu
+
+####
+POST http://localhost:3000/menu
+Content-Type: application/json
+
+{
+    "namaMakanan": "Nasi Goreng",
+    "harga": "Rp. 15.000"
+}
+
+###
+PUT http://localhost:3000/menu
+Content-Type: application/json
+
+{
+    "namaMakanan": "Nasi Goreng",
+    "harga": "Rp. 20.000"
+}
+
+###
+DELETE http://localhost:3000/menu/Rawon
