@@ -1,0 +1,10 @@
+@import "@/styles/color";
+
+.login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: map-get($map: $schema, $key: primary);
+}
